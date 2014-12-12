@@ -120,6 +120,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libKF5Plasma.so.5.4.0
 %attr(755,root,root) %ghost %{_libdir}/libKF5PlasmaQuick.so.5
 %attr(755,root,root) %{_libdir}/libKF5PlasmaQuick.so.5.4.0
+%dir %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components
 %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/BusyIndicator.qml
 %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/Button.qml
 %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/ButtonColumn.qml
@@ -158,6 +159,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/ToolButton.qml
 %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/Window.qml
 %attr(755,root,root) %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/libplasmacomponentsplugin.so
+%dir %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/private
 %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/private/AppManager.js
 %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/private/ButtonShadow.qml
 %{_libdir}/qt5/platformqml/touch/org/kde/plasma/components/private/Config.js
@@ -175,7 +177,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/platformstatus.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/plasma_appletscript_declarative.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/plasma_engine_testengine.so
-%{_libdir}/qt5/qml/org/kde/plasma/accessdenied/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/plasma
+%{_libdir}/qt5/qml/org/kde/plasma/accessdenied
+%dir %{_libdir}/qt5/qml/org/kde/plasma/calendar
 %{_libdir}/qt5/qml/org/kde/plasma/calendar/CalendarToolbar.qml
 %{_libdir}/qt5/qml/org/kde/plasma/calendar/DayDelegate.qml
 %{_libdir}/qt5/qml/org/kde/plasma/calendar/DaysCalendar.qml
@@ -183,6 +187,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/calendar/MonthView.qml
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/calendar/libcalendarplugin.so
 %{_libdir}/qt5/qml/org/kde/plasma/calendar/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/plasma/components
 %{_libdir}/qt5/qml/org/kde/plasma/components/BusyIndicator.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/Button.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/ButtonColumn.qml
@@ -217,6 +222,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/components/ToolBarLayout.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/ToolButton.qml
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/components/libplasmacomponentsplugin.so
+%dir %{_libdir}/qt5/qml/org/kde/plasma/components/private
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/AppManager.js
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/ButtonShadow.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/Config.js
@@ -231,10 +237,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/TabGroup.js
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/TextFieldFocus.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/plasma/components/styles
 %{_libdir}/qt5/qml/org/kde/plasma/components/styles/*.qml
+%dir  %{_libdir}/qt5/qml/org/kde/plasma/core
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/core/libcorebindingsplugin.so
+%dir %{_libdir}/qt5/qml/org/kde/plasma/core/private
 %{_libdir}/qt5/qml/org/kde/plasma/core/private/DefaultToolTip.qml
 %{_libdir}/qt5/qml/org/kde/plasma/core/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/plasma/extras
 %{_libdir}/qt5/qml/org/kde/plasma/extras/App.qml
 %{_libdir}/qt5/qml/org/kde/plasma/extras/ConditionalLoader.qml
 %{_libdir}/qt5/qml/org/kde/plasma/extras/Heading.qml
@@ -242,6 +252,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/extras/Paragraph.qml
 %{_libdir}/qt5/qml/org/kde/plasma/extras/ScrollArea.qml
 %{_libdir}/qt5/qml/org/kde/plasma/extras/Title.qml
+%dir %{_libdir}/qt5/qml/org/kde/plasma/extras/animations
 %{_libdir}/qt5/qml/org/kde/plasma/extras/animations/ActivateAnimation.qml
 %{_libdir}/qt5/qml/org/kde/plasma/extras/animations/AppearAnimation.qml
 %{_libdir}/qt5/qml/org/kde/plasma/extras/animations/DisappearAnimation.qml
@@ -249,6 +260,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/extras/animations/ReleasedAnimation.qml
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/extras/libplasmaextracomponentsplugin.so
 %{_libdir}/qt5/qml/org/kde/plasma/extras/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/libplatformcomponentsplugin.so
 %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/qmldir
 %{_datadir}/dbus-1/interfaces/org.kde.platformstatus.xml
@@ -268,11 +280,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservicetypes5/plasma-shell.desktop
 %{_datadir}/kservicetypes5/plasma-wallpaper.desktop
 %{_mandir}/man1/plasmapkg2.1*
+%dir %{_datadir}/plasma
+%dir %{_datadir}/plasma/desktoptheme
 %{_datadir}/plasma/desktoptheme/air
 %{_datadir}/plasma/desktoptheme/breeze-dark
 %{_datadir}/plasma/desktoptheme/default
 %{_datadir}/plasma/desktoptheme/oxygen
-%{_datadir}/plasma/plasma_scriptengine_ruby/data_engine.rb
+%{_datadir}/plasma/plasma_scriptengine_ruby
+%dir %{_datadir}/plasma/services
 %{_datadir}/plasma/services/dataengineservice.operations
 %{_datadir}/plasma/services/plasmoidservice.operations
 %{_datadir}/plasma/services/storage.operations
