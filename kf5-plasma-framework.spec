@@ -1,15 +1,15 @@
-%define         kdeframever     5.10
+%define         kdeframever     5.13
 %define         qtver           5.3.2
 %define         kfname          plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.10.0
+Version:	5.13.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	3435d5f1771a227368e2579ccd347a90
+# Source0-md5:	448982d136d8fcf1074c3ef426359618
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -122,8 +122,10 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %ghost %{_libdir}/libKF5PlasmaQuick.so.5
 %attr(755,root,root) %{_libdir}/libKF5PlasmaQuick.so.*.*
 %attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/platformstatus.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma_appletscript_declarative.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/plasma_engine_testengine.so
+%dir %{_libdir}/qt5/plugins/plasma
+%dir %{_libdir}/qt5/plugins/plasma/scriptengines
+%attr(755,root,root) %{_libdir}/qt5/plugins/plasma/scriptengines/plasma_appletscript_declarative.so
 %{_libdir}/qt5/qml/QtQuick/Controls/Styles/Plasma
 %dir %{_libdir}/qt5/qml/org/kde/plasma
 %{_libdir}/qt5/qml/org/kde/plasma/accessdenied
@@ -210,7 +212,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kservices5/kded/platformstatus.desktop
 %{_datadir}/kservices5/plasma-dataengine-testengine.desktop
 %{_datadir}/kservices5/plasma-scriptengine-applet-declarative.desktop
-%{_datadir}/kservices5/plasma-scriptengine-ruby-dataengine.desktop
+#%{_datadir}/kservices5/plasma-scriptengine-ruby-dataengine.desktop
 %{_datadir}/kservicetypes5/plasma-applet.desktop
 %{_datadir}/kservicetypes5/plasma-containment.desktop
 %{_datadir}/kservicetypes5/plasma-containmentactions.desktop
@@ -229,7 +231,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/desktoptheme/breeze-dark
 %{_datadir}/plasma/desktoptheme/default
 %{_datadir}/plasma/desktoptheme/oxygen
-%{_datadir}/plasma/plasma_scriptengine_ruby
+#%{_datadir}/plasma/plasma_scriptengine_ruby
 %dir %{_datadir}/plasma/services
 %{_datadir}/plasma/services/dataengineservice.operations
 %{_datadir}/plasma/services/plasmoidservice.operations
