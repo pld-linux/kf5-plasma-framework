@@ -124,6 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/platformstatus.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/plasma_engine_testengine.so
 %dir %{_libdir}/qt5/plugins/plasma
+%dir %{_libdir}/qt5/plugins/plasma/applets
 %dir %{_libdir}/qt5/plugins/plasma/scriptengines
 %attr(755,root,root) %{_libdir}/qt5/plugins/plasma/scriptengines/plasma_appletscript_declarative.so
 %{_libdir}/qt5/qml/QtQuick/Controls/Styles/Plasma
