@@ -106,6 +106,8 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} -C build/ install \
         DESTDIR=$RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_libdir}/qt5/plugins/plasma/applets
+
 %find_lang libplasma5
 
 %clean
