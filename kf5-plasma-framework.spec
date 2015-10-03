@@ -48,6 +48,7 @@ BuildRequires:	kf5-kiconthemes-devel >= %{version}
 BuildRequires:	kf5-kio-devel >= %{version}
 BuildRequires:	kf5-kitemviews-devel >= %{version}
 BuildRequires:	kf5-kjobwidgets-devel >= %{version}
+BuildRequires:	kf5-knotifications-devel
 BuildRequires:	kf5-kservice-devel >= %{version}
 BuildRequires:	kf5-ktextwidgets-devel >= %{version}
 BuildRequires:	kf5-kwidgetsaddons-devel >= %{version}
