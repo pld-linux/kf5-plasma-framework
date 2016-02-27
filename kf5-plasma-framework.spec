@@ -1,15 +1,15 @@
-%define         kdeframever     5.13
+%define         kdeframever     5.19
 %define         qtver           5.3.2
 %define         kfname          plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.13.0
-Release:	2
+Version:	5.19.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	448982d136d8fcf1074c3ef426359618
+# Source0-md5:	dbb2096267291d4a36482575c00a3c58
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -124,7 +124,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libKF5Plasma.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/libKF5PlasmaQuick.so.5
 %attr(755,root,root) %{_libdir}/libKF5PlasmaQuick.so.*.*
-%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/platformstatus.so
+#%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/platformstatus.so
 %attr(755,root,root) %{_libdir}/qt5/plugins/plasma_engine_testengine.so
 %dir %{_libdir}/qt5/plugins/plasma
 %dir %{_libdir}/qt5/plugins/plasma/applets
@@ -212,8 +212,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/libplatformcomponentsplugin.so
 %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/qmldir
-%{_datadir}/dbus-1/interfaces/org.kde.platformstatus.xml
-%{_datadir}/kservices5/kded/platformstatus.desktop
+#%{_datadir}/dbus-1/interfaces/org.kde.platformstatus.xml
+#%{_datadir}/kservices5/kded/platformstatus.desktop
 %{_datadir}/kservices5/plasma-dataengine-testengine.desktop
 %{_datadir}/kservices5/plasma-scriptengine-applet-declarative.desktop
 #%{_datadir}/kservices5/plasma-scriptengine-ruby-dataengine.desktop
