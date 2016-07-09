@@ -1,15 +1,15 @@
-%define         kdeframever     5.19
+%define         kdeframever     5.23
 %define         qtver           5.3.2
 %define         kfname          plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.19.0
+Version:	5.23.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	dbb2096267291d4a36482575c00a3c58
+# Source0-md5:	ff844df8d38596734e541a0c53131e32
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -63,6 +63,7 @@ BuildRequires:	cmake >= 2.8.12
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
+Requires:	kf5-dirs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt5dir		%{_libdir}/qt5
@@ -233,6 +234,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_datadir}/plasma/desktoptheme
 %{_datadir}/plasma/desktoptheme/air
 %{_datadir}/plasma/desktoptheme/breeze-dark
+%{_datadir}/plasma/desktoptheme/breeze-light
 %{_datadir}/plasma/desktoptheme/default
 %{_datadir}/plasma/desktoptheme/oxygen
 #%{_datadir}/plasma/plasma_scriptengine_ruby
@@ -245,6 +247,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/KF5/Plasma
 %{_includedir}/KF5/plasma
+%{_includedir}/KF5/PlasmaQuick
+%{_includedir}/KF5/plasmaquick
 %{_includedir}/KF5/plasma_version.h
 %{_libdir}/cmake/KF5Plasma
 %{_libdir}/cmake/KF5PlasmaQuick
