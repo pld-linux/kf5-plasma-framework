@@ -1,15 +1,15 @@
-%define         kdeframever     5.24
+%define         kdeframever     5.39
 %define         qtver           5.3.2
 %define         kfname          plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.24.0
+Version:	5.39.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	ead321090ad7069b772eb20ae84b90e3
+# Source0-md5:	7595b5162086dd790747e36af49663ea
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -26,6 +26,7 @@ BuildRequires:	Qt5Test-devel >= %{qtver}
 BuildRequires:	Qt5Widgets-devel >= %{qtver}
 BuildRequires:	Qt5X11Extras-devel >= %{qtver}
 BuildRequires:	Qt5Xml-devel >= %{qtver}
+BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-attica-devel >= %{version}
 BuildRequires:	kf5-extra-cmake-modules >= 1.4.0
@@ -58,10 +59,9 @@ BuildRequires:	kf5-solid-devel >= %{version}
 BuildRequires:	kf5-sonnet-devel >= %{version}
 BuildRequires:	libxcb-devel
 BuildRequires:	pkgconfig
-BuildRequires:	xorg-lib-libX11-devel
-BuildRequires:	cmake >= 2.8.12
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
 Requires:	kf5-dirs
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -179,7 +179,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/components/libplasmacomponentsplugin.so
 %dir %{_libdir}/qt5/qml/org/kde/plasma/components/private
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/AppManager.js
-%{_libdir}/qt5/qml/org/kde/plasma/components/private/Config.js
+#%%{_libdir}/qt5/qml/org/kde/plasma/components/private/Config.js
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/DualStateButton.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/InlineDialog.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/PageStack.js
@@ -242,6 +242,106 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/services/dataengineservice.operations
 %{_datadir}/plasma/services/plasmoidservice.operations
 %{_datadir}/plasma/services/storage.operations
+
+%{_libdir}/qt5/plugins/kpackage/packagestructure/containmentactions_packagestructure.so
+%{_libdir}/qt5/plugins/kpackage/packagestructure/dataengine_packagestructure.so
+%{_libdir}/qt5/plugins/kpackage/packagestructure/plasmageneric_packagestructure.so
+%{_libdir}/qt5/plugins/kpackage/packagestructure/plasmatheme_packagestructure.so
+%{_libdir}/qt5/plugins/kpackage/packagestructure/plasmoid_packagestructure.so
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/BusyIndicator.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Button.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/CheckBox.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/CheckDelegate.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/CheckIndicator.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ComboBox.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Container.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Control.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Dial.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Dialog.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/DialogButtonBox.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Drawer.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Frame.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/GroupBox.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ItemDelegate.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Label.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Menu.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/MenuItem.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Popup.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ProgressBar.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/RadioButton.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/RadioDelegate.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/RadioIndicator.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/RangeSlider.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ScrollBar.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Slider.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/SpinBox.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Switch.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/SwitchDelegate.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/SwitchIndicator.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/TabBar.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/TabButton.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/TextArea.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/TextField.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ToolBar.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ToolButton.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ToolTip.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/ButtonShadow.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/DefaultListItemBackground.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/RoundShadow.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/TextFieldFocus.qml
+%{_libdir}/qt5/qml/org/kde/plasma/calendar/plugins.qmltypes
+%dir %{_libdir}/qt5/qml/org/kde/plasma/components.3
+%dir %{_libdir}/qt5/qml/org/kde/plasma/components.3/private
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/BusyIndicator.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Button.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/CheckBox.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/CheckDelegate.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/CheckIndicator.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/ComboBox.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Container.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Control.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Dial.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Frame.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/GroupBox.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/ItemDelegate.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Label.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/ProgressBar.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/RadioButton.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/RadioDelegate.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/RadioIndicator.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/RangeSlider.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/ScrollBar.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Slider.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/SpinBox.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/TabBar.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/TabButton.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/TextArea.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/TextField.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/ToolBar.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/ToolButton.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/ButtonShadow.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/DefaultListItemBackground.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/RoundShadow.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/TextFieldFocus.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/qmldir
+%{_libdir}/qt5/qml/org/kde/plasma/components/plugins.qmltypes
+%{_libdir}/qt5/qml/org/kde/plasma/core/plugins.qmltypes
+%{_libdir}/qt5/qml/org/kde/plasma/extras/plugins.qmltypes
+%{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/plugins.qmltypes
+%{_datadir}/kdevappwizard/templates/cpp-plasmoid.tar.bz2
+%{_datadir}/kdevappwizard/templates/plasma-wallpaper.tar.bz2
+%{_datadir}/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
+%{_datadir}/kdevappwizard/templates/qml-plasmoid.tar.bz2
+%{_mandir}/ca/man1/plasmapkg2.1*
+%{_mandir}/de/man1/plasmapkg2.1*
+%{_mandir}/es/man1/plasmapkg2.1*
+%{_mandir}/it/man1/plasmapkg2.1*
+%{_mandir}/nl/man1/plasmapkg2.1*
+%{_mandir}/pt/man1/plasmapkg2.1*
+%{_mandir}/pt_BR/man1/plasmapkg2.1*
+%{_mandir}/sv/man1/plasmapkg2.1*
+%{_mandir}/uk/man1/plasmapkg2.1*
+%{_libdir}/qt5/qml/org/kde/plasma/extras/DescriptiveLabel.qml
 
 %files devel
 %defattr(644,root,root,755)
