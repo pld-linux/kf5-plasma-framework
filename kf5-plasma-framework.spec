@@ -5,7 +5,7 @@
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
 Version:	5.39.0
-Release:	2
+Release:	3
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -331,6 +331,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/core/plugins.qmltypes
 %{_libdir}/qt5/qml/org/kde/plasma/extras/plugins.qmltypes
 %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/plugins.qmltypes
+%dir %{_datadir}/kdevappwizard
 %dir %{_datadir}/kdevappwizard/templates
 %{_datadir}/kdevappwizard/templates/cpp-plasmoid.tar.bz2
 %{_datadir}/kdevappwizard/templates/plasma-wallpaper.tar.bz2
