@@ -5,7 +5,7 @@
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
 Version:	5.39.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -248,6 +248,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/plugins/kpackage/packagestructure/plasmageneric_packagestructure.so
 %{_libdir}/qt5/plugins/kpackage/packagestructure/plasmatheme_packagestructure.so
 %{_libdir}/qt5/plugins/kpackage/packagestructure/plasmoid_packagestructure.so
+%dir %{_libdir}/qt5/qml/QtQuick/Controls.2
+%dir %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma
+%dir %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private
 %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/BusyIndicator.qml
 %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Button.qml
 %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/CheckBox.qml
@@ -328,6 +331,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/core/plugins.qmltypes
 %{_libdir}/qt5/qml/org/kde/plasma/extras/plugins.qmltypes
 %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/plugins.qmltypes
+%dir %{_datadir}/kdevappwizard/templates
 %{_datadir}/kdevappwizard/templates/cpp-plasmoid.tar.bz2
 %{_datadir}/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 %{_datadir}/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
