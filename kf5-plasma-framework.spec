@@ -5,7 +5,7 @@
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
 Version:	5.39.0
-Release:	3
+Release:	4
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -50,6 +50,7 @@ BuildRequires:	kf5-kio-devel >= %{version}
 BuildRequires:	kf5-kitemviews-devel >= %{version}
 BuildRequires:	kf5-kjobwidgets-devel >= %{version}
 BuildRequires:	kf5-knotifications-devel
+BuildRequires:	kf5-kpackage-devel >= %{version}
 BuildRequires:	kf5-kservice-devel >= %{version}
 BuildRequires:	kf5-ktextwidgets-devel >= %{version}
 BuildRequires:	kf5-kwidgetsaddons-devel >= %{version}
@@ -83,6 +84,7 @@ Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	kf5-kpackage-devel >= %{version}
 
 %description devel
 Header files for %{kfname} development.
