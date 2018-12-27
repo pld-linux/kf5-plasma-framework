@@ -1,15 +1,15 @@
-%define         kdeframever     5.39
-%define         qtver           5.3.2
+%define         kdeframever     5.53
+%define         qtver           5.9.0
 %define         kfname          plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.39.0
-Release:	6
+Version:	5.53.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	7595b5162086dd790747e36af49663ea
+# Source0-md5:	b083d295d7f2ba6236ca466b0cdaca64
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -47,12 +47,14 @@ BuildRequires:	kf5-kguiaddons-devel >= %{version}
 BuildRequires:	kf5-ki18n-devel >= %{version}
 BuildRequires:	kf5-kiconthemes-devel >= %{version}
 BuildRequires:	kf5-kio-devel >= %{version}
+BuildRequires:	kf5-kirigami2-devel >= %{version}
 BuildRequires:	kf5-kitemviews-devel >= %{version}
 BuildRequires:	kf5-kjobwidgets-devel >= %{version}
 BuildRequires:	kf5-knotifications-devel
 BuildRequires:	kf5-kpackage-devel >= %{version}
 BuildRequires:	kf5-kservice-devel >= %{version}
 BuildRequires:	kf5-ktextwidgets-devel >= %{version}
+BuildRequires:	kf5-kwayland-devel >= %{version}
 BuildRequires:	kf5-kwidgetsaddons-devel >= %{version}
 BuildRequires:	kf5-kwindowsystem-devel >= %{version}
 BuildRequires:	kf5-kxmlgui-devel >= %{version}
@@ -351,6 +353,26 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/sv/man1/plasmapkg2.1*
 %{_mandir}/uk/man1/plasmapkg2.1*
 %{_libdir}/qt5/qml/org/kde/plasma/extras/DescriptiveLabel.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/PageIndicator.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/RoundButton.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ScrollView.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma
+%{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma/Icon.qml
+%{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma/Theme.qml
+%{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma/Units.qml
+%dir %{_libdir}/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma
+%{_libdir}/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma/Units.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Switch.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/SwitchDelegate.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/SwitchIndicator.qml
+%{_datadir}/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/MobileCursor.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/MobileTextActionsToolBar.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/qmldir
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/MobileCursor.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/MobileTextActionsToolBar.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/qmldir
 
 %files devel
 %defattr(644,root,root,755)
