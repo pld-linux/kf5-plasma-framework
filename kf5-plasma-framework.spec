@@ -1,15 +1,15 @@
-%define         kdeframever     5.53
+%define         kdeframever     5.56
 %define         qtver           5.9.0
 %define         kfname          plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.53.0
+Version:	5.56.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	b083d295d7f2ba6236ca466b0cdaca64
+# Source0-md5:	1291b03536fb9719acc910f6d3c2af98
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -61,6 +61,7 @@ BuildRequires:	kf5-kxmlgui-devel >= %{version}
 BuildRequires:	kf5-solid-devel >= %{version}
 BuildRequires:	kf5-sonnet-devel >= %{version}
 BuildRequires:	libxcb-devel
+BuildRequires:	ninja
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	tar >= 1:1.22
@@ -102,16 +103,14 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 %build
 install -d build
 cd build
-%cmake \
+%cmake -G Ninja \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	../
-%{__make}
+%ninja_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-%{__make} -C build/ install \
-        DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 install -d $RPM_BUILD_ROOT%{_libdir}/qt5/plugins/plasma/applets
 
