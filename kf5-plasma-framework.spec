@@ -19,6 +19,7 @@ BuildRequires:	Qt5Gui-devel >= %{qtver}
 BuildRequires:	Qt5Network-devel >= %{qtver}
 BuildRequires:	Qt5Qml-devel >= %{qtver}
 BuildRequires:	Qt5Quick-devel >= %{qtver}
+BuildRequires:	Qt5Quick-controls2-devel >= %{qtver}
 BuildRequires:	Qt5Script-devel >= %{qtver}
 BuildRequires:	Qt5Sql-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
