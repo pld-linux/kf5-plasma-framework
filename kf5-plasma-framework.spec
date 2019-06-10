@@ -1,15 +1,15 @@
-%define         kdeframever     5.56
-%define         qtver           5.9.0
-%define         kfname          plasma-framework
+%define		kdeframever	5.59
+%define		qtver		5.9.0
+%define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.56.0
+Version:	5.59.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	1291b03536fb9719acc910f6d3c2af98
+# Source0-md5:	7a6a2bed60529ec3a79f393e3bc0fc0f
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -18,8 +18,8 @@ BuildRequires:	Qt5DBus-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel >= %{qtver}
 BuildRequires:	Qt5Network-devel >= %{qtver}
 BuildRequires:	Qt5Qml-devel >= %{qtver}
-BuildRequires:	Qt5Quick-devel >= %{qtver}
 BuildRequires:	Qt5Quick-controls2-devel >= %{qtver}
+BuildRequires:	Qt5Quick-devel >= %{qtver}
 BuildRequires:	Qt5Script-devel >= %{qtver}
 BuildRequires:	Qt5Sql-devel >= %{qtver}
 BuildRequires:	Qt5Svg-devel >= %{qtver}
@@ -367,12 +367,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/SwitchDelegate.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/SwitchIndicator.qml
 %{_datadir}/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
-%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/MobileCursor.qml
-%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/MobileTextActionsToolBar.qml
 %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/qmldir
-%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/MobileCursor.qml
-%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/MobileTextActionsToolBar.qml
+%dir %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/mobiletextselection
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/mobiletextselection/MobileCursor.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/mobiletextselection/MobileTextActionsToolBar.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/mobiletextselection/qmldir
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/private/qmldir
+%dir %{_libdir}/qt5/qml/org/kde/plasma/components.3/mobiletextselection
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/mobiletextselection/MobileCursor.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/mobiletextselection/MobileTextActionsToolBar.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/mobiletextselection/qmldir
 
 %files devel
 %defattr(644,root,root,755)
