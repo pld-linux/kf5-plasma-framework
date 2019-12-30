@@ -1,15 +1,15 @@
-%define		kdeframever	5.59
+%define		kdeframever	5.65
 %define		qtver		5.9.0
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.59.0
+Version:	5.65.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	7a6a2bed60529ec3a79f393e3bc0fc0f
+# Source0-md5:	7e7e49d2b74fe69c8c9b79b9c08c210d
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -310,16 +310,25 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/Container.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/Control.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/Dial.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Dialog.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/DialogButtonBox.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Drawer.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/Frame.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/GroupBox.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/ItemDelegate.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/Label.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Menu.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/MenuItem.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/PageIndicator.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Popup.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/ProgressBar.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/RadioButton.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/RadioDelegate.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/RadioIndicator.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/RangeSlider.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/RoundButton.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/ScrollBar.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/ScrollView.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/Slider.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/SpinBox.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/TabBar.qml
@@ -328,6 +337,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/TextField.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/ToolBar.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/ToolButton.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/ToolTip.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/private/ButtonShadow.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/private/DefaultListItemBackground.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/private/RoundShadow.qml
@@ -343,6 +353,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kdevappwizard/templates/plasma-wallpaper.tar.bz2
 %{_datadir}/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
 %{_datadir}/kdevappwizard/templates/qml-plasmoid.tar.bz2
+%{_datadir}/qlogging-categories5/plasma-framework.categories
 %{_mandir}/ca/man1/plasmapkg2.1*
 %{_mandir}/de/man1/plasmapkg2.1*
 %{_mandir}/es/man1/plasmapkg2.1*
