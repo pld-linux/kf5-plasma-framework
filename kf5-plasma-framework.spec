@@ -1,15 +1,15 @@
-%define		kdeframever	5.67
+%define		kdeframever	5.79
 %define		qtver		5.9.0
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.67.0
+Version:	5.79.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	5203954a541766bd0def96fe2ddc1d05
+# Source0-md5:	4dc731b88b3e28748622284622e65fc6
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -131,8 +131,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libKF5Plasma.so.*.*
 %attr(755,root,root) %ghost %{_libdir}/libKF5PlasmaQuick.so.5
 %attr(755,root,root) %{_libdir}/libKF5PlasmaQuick.so.*.*
-#%attr(755,root,root) %{_libdir}/qt5/plugins/kf5/kded/platformstatus.so
-%attr(755,root,root) %{_libdir}/qt5/plugins/plasma_engine_testengine.so
 %dir %{_libdir}/qt5/plugins/plasma
 %dir %{_libdir}/qt5/plugins/plasma/applets
 %dir %{_libdir}/qt5/plugins/plasma/scriptengines
@@ -219,11 +217,7 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/libplatformcomponentsplugin.so
 %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/qmldir
-#%{_datadir}/dbus-1/interfaces/org.kde.platformstatus.xml
-#%{_datadir}/kservices5/kded/platformstatus.desktop
-%{_datadir}/kservices5/plasma-dataengine-testengine.desktop
 %{_datadir}/kservices5/plasma-scriptengine-applet-declarative.desktop
-#%{_datadir}/kservices5/plasma-scriptengine-ruby-dataengine.desktop
 %{_datadir}/kservicetypes5/plasma-applet.desktop
 %{_datadir}/kservicetypes5/plasma-containment.desktop
 %{_datadir}/kservicetypes5/plasma-containmentactions.desktop
@@ -388,6 +382,43 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/mobiletextselection/MobileCursor.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/mobiletextselection/MobileTextActionsToolBar.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/mobiletextselection/qmldir
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Page.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Page.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/PlasmoidHeading.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/ExpandableListItem.qml
+
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/ButtonBackground.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/ButtonContent.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/ButtonFocus.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/ButtonHover.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/FlatButtonBackground.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/RaisedButtonBackground.qml
+%{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma/AbstractApplicationHeader.qml
+
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/ButtonBackground.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/ButtonContent.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/ButtonFocus.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/ButtonHover.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/FlatButtonBackground.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/private/RaisedButtonBackground.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/ListItem.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/PlaceholderMessage.qml
+%{_mandir}/fr/man1/plasmapkg2.1*
+%{_datadir}/qlogging-categories5/plasma-framework.renamecategories
+
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/AbstractButton.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/MenuSeparator.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/Pane.qml
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/README.md
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/AbstractButton.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/MenuSeparator.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/Pane.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/README.md
+%{_libdir}/qt5/qml/org/kde/plasma/extras/BasicPlasmoidHeading.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/Representation.qml
+%dir %{_libdir}/qt5/qml/org/kde/plasma/extras/private
+%{_libdir}/qt5/qml/org/kde/plasma/extras/private/BackgroundMetrics.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/private/qmldir
 
 %files devel
 %defattr(644,root,root,755)
