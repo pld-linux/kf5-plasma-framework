@@ -1,15 +1,15 @@
-%define		kdeframever	5.79
+%define		kdeframever	5.80
 %define		qtver		5.9.0
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.79.0
+Version:	5.80.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	4dc731b88b3e28748622284622e65fc6
+# Source0-md5:	e7c8aba78ce14493b9ae971f55fbd809
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -127,9 +127,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.md
 %attr(755,root,root) %{_bindir}/plasmapkg2
-%attr(755,root,root) %ghost %{_libdir}/libKF5Plasma.so.5
+%ghost %{_libdir}/libKF5Plasma.so.5
 %attr(755,root,root) %{_libdir}/libKF5Plasma.so.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5PlasmaQuick.so.5
+%ghost %{_libdir}/libKF5PlasmaQuick.so.5
 %attr(755,root,root) %{_libdir}/libKF5PlasmaQuick.so.*.*
 %dir %{_libdir}/qt5/plugins/plasma
 %dir %{_libdir}/qt5/plugins/plasma/applets
@@ -183,7 +183,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/components/libplasmacomponentsplugin.so
 %dir %{_libdir}/qt5/qml/org/kde/plasma/components/private
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/AppManager.js
-#%%{_libdir}/qt5/qml/org/kde/plasma/components/private/Config.js
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/DualStateButton.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/InlineDialog.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components/private/PageStack.js
@@ -429,5 +428,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/plasma_version.h
 %{_libdir}/cmake/KF5Plasma
 %{_libdir}/cmake/KF5PlasmaQuick
-%attr(755,root,root) %{_libdir}/libKF5Plasma.so
-%attr(755,root,root) %{_libdir}/libKF5PlasmaQuick.so
+%{_libdir}/libKF5Plasma.so
+%{_libdir}/libKF5PlasmaQuick.so
