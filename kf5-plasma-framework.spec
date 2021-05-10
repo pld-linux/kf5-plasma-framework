@@ -1,15 +1,15 @@
-%define		kdeframever	5.81
+%define		kdeframever	5.82
 %define		qtver		5.9.0
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.81.0
+Version:	5.82.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	f8ce215e2888b3cd843ad0f8ad924219
+# Source0-md5:	bdafe504d31188ba094487f187a8fc9f
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -418,6 +418,8 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt5/qml/org/kde/plasma/extras/private
 %{_libdir}/qt5/qml/org/kde/plasma/extras/private/BackgroundMetrics.qml
 %{_libdir}/qt5/qml/org/kde/plasma/extras/private/qmldir
+%{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/SwipeView.qml
+%{_libdir}/qt5/qml/org/kde/plasma/components.3/SwipeView.qml
 
 %files devel
 %defattr(644,root,root,755)
