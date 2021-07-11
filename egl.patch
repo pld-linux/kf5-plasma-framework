@@ -1,12 +1,12 @@
-diff -up plasma-framework-5.83.0/src/declarativeimports/core/CMakeLists.txt.orig plasma-framework-5.83.0/src/declarativeimports/core/CMakeLists.txt
---- plasma-framework-5.83.0/src/declarativeimports/core/CMakeLists.txt.orig	2021-06-08 12:39:06.000000000 +0200
-+++ plasma-framework-5.83.0/src/declarativeimports/core/CMakeLists.txt	2021-06-14 19:55:05.956159908 +0200
+diff -up plasma-framework-5.84.0/src/declarativeimports/core/CMakeLists.txt.orig plasma-framework-5.84.0/src/declarativeimports/core/CMakeLists.txt
+--- plasma-framework-5.84.0/src/declarativeimports/core/CMakeLists.txt.orig	2021-07-03 14:20:52.000000000 +0200
++++ plasma-framework-5.84.0/src/declarativeimports/core/CMakeLists.txt	2021-07-11 15:51:56.010833913 +0200
 @@ -58,7 +58,7 @@ if(HAVE_X11)
  endif()
  
  if(HAVE_EGL)
--    target_link_libraries(corebindingsplugin OpenGL::EGL)
+-    target_link_libraries(corebindingsplugin ${EGL_TARGET})
 +    target_link_libraries(corebindingsplugin GL EGL)
- endif()
+ else()
  
- if (${Qt5Gui_OPENGL_IMPLEMENTATION} STREQUAL "GLESv2")
+ endif()
