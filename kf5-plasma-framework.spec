@@ -1,15 +1,15 @@
-%define		kdeframever	5.85
+%define		kdeframever	5.86
 %define		qtver		5.9.0
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.85.0
+Version:	5.86.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	fa2e79613982549dca6e20ecd0907fa5
+Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
+# Source0-md5:	0ed5ff2e738841511f26ebbc83a67483
 Patch0:		egl.patch
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
@@ -244,11 +244,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/services/plasmoidservice.operations
 %{_datadir}/plasma/services/storage.operations
 
-%{_libdir}/qt5/plugins/kpackage/packagestructure/containmentactions_packagestructure.so
-%{_libdir}/qt5/plugins/kpackage/packagestructure/dataengine_packagestructure.so
-%{_libdir}/qt5/plugins/kpackage/packagestructure/plasmageneric_packagestructure.so
-%{_libdir}/qt5/plugins/kpackage/packagestructure/plasmatheme_packagestructure.so
-%{_libdir}/qt5/plugins/kpackage/packagestructure/plasmoid_packagestructure.so
 %dir %{_libdir}/qt5/qml/QtQuick/Controls.2
 %dir %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma
 %dir %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private
@@ -363,12 +358,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/RoundButton.qml
 %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/ScrollView.qml
 %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/qmldir
+
+%{_libdir}/qt5/plugins/kf5/kirigami/KirigamiPlasmaStyle.so
+%dir %{_libdir}/qt5/plugins/kpackage/packagestructure
+%{_libdir}/qt5/plugins/kpackage/packagestructure/plasma_applet.so
+%{_libdir}/qt5/plugins/kpackage/packagestructure/plasma_containmentactions.so
+%{_libdir}/qt5/plugins/kpackage/packagestructure/plasma_dataengine.so
+%{_libdir}/qt5/plugins/kpackage/packagestructure/plasma_generic.so
+%{_libdir}/qt5/plugins/kpackage/packagestructure/plasma_theme.so
 %dir %{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma
 %{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma/Icon.qml
 %{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma/Theme.qml
-%{_libdir}/qt5/qml/org/kde/kirigami.2/styles/Plasma/Units.qml
-%dir %{_libdir}/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma
-%{_libdir}/qt5/qml/org/kde/kirigami.2/styles/org.kde.desktop.plasma/Units.qml
+
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/Switch.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/SwitchDelegate.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/SwitchIndicator.qml
