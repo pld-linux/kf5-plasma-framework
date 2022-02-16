@@ -1,16 +1,15 @@
-%define		kdeframever	5.90
+%define		kdeframever	5.91
 %define		qtver		5.9.0
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.90.0
+Version:	5.91.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	f95f84b9935ce9f6727094519721f855
-Patch0:		egl.patch
+# Source0-md5:	0e8698ea83e84bfc6709f378a32b6ba3
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -101,7 +100,6 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 
 %prep
 %setup -q -n %{kfname}-%{version}
-%patch0 -p1
 
 %build
 install -d build
@@ -432,7 +430,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/KF5/plasma
 %{_includedir}/KF5/PlasmaQuick
 %{_includedir}/KF5/plasmaquick
-%{_includedir}/KF5/plasma_version.h
 %{_libdir}/cmake/KF5Plasma
 %{_libdir}/cmake/KF5PlasmaQuick
 %{_libdir}/libKF5Plasma.so
