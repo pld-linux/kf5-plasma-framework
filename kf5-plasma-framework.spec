@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.92
+%define		kdeframever	5.93
 %define		qtver		5.9.0
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.92.0
+Version:	5.93.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	859c52e18add9f7243278533e0fe38b3
+# Source0-md5:	4c2190d01b33608e4285d0679bfa3024
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -432,6 +432,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/SwipeView.qml
 %{_libdir}/qt5/qml/QtQuick/Controls.2/Plasma/private/IconLabel.qml
 %{_libdir}/qt5/qml/org/kde/plasma/components.3/private/IconLabel.qml
+
+%{_libdir}/qt5/qml/org/kde/plasma/extras/ActionTextField.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/Highlight.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/PasswordField.qml
+%{_libdir}/qt5/qml/org/kde/plasma/extras/SearchField.qml
 
 %files devel
 %defattr(644,root,root,755)
