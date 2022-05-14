@@ -1,18 +1,18 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeframever	5.93
+%define		kdeframever	5.94
 %define		qtver		5.9.0
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
 Name:		kf5-%{kfname}
-Version:	5.93.0
+Version:	5.94.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
-# Source0-md5:	4c2190d01b33608e4285d0679bfa3024
+# Source0-md5:	a3e74066c093105e4bb46f6feeecf16c
 URL:		http://www.kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -225,7 +225,6 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents
 %attr(755,root,root) %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/libplatformcomponentsplugin.so
 %{_libdir}/qt5/qml/org/kde/plasma/platformcomponents/qmldir
-%{_datadir}/kservices5/plasma-scriptengine-applet-declarative.desktop
 %{_datadir}/kservicetypes5/plasma-applet.desktop
 %{_datadir}/kservicetypes5/plasma-containment.desktop
 %{_datadir}/kservicetypes5/plasma-containmentactions.desktop
