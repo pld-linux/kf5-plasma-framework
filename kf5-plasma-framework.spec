@@ -1,11 +1,13 @@
 #
 # Conditional build:
-%bcond_with	tests		# build with tests
+%bcond_with	tests		# test suite
+
 %define		kdeframever	5.116
 %define		qtver		5.15.2
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
+Summary(pl.UTF-8):	Podstawowe konstrukcje do zbudowania głównego interfejsu użytkownika
 Name:		kf5-%{kfname}
 Version:	5.116.0
 Release:	1
@@ -13,7 +15,7 @@ License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
 # Source0-md5:	425fd39b0b689e60690feb514739d605
-URL:		http://www.kde.org/
+URL:		https://kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
 BuildRequires:	Qt5Core-devel >= %{qtver}
@@ -77,14 +79,23 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		qt5dir		%{_libdir}/qt5
 
 %description
-The plasma framework provides the foundations that can be used to
+The Plasma framework provides the foundations that can be used to
 build a primary user interface, from graphical to logical components.
 
-The plasma framework provides the following:
+The Plasma framework provides the following:
 - A C++ library: libplasma
 - Script engines
 - QML components
 
+%description -l pl.UTF-8
+Szkielet Plasma dostarcza podstawowe konstrukcje, których można użyć
+do zbudowania głównego interfejsu użytkownika, od komponentów
+graficznych po logiczne.
+
+Szkielet Plasma zawiera:
+- bibliotekę C++ libplasma
+- silniki skryptowe
+- komponenty QML
 
 %package devel
 Summary:	Header files for %{kfname} development
@@ -116,9 +127,9 @@ Pliki nagłówkowe dla programistów używających %{kfname}.
 %ninja_build -C build test
 %endif
 
-
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %ninja_install -C build
 
 install -d $RPM_BUILD_ROOT%{_libdir}/qt5/plugins/plasma/applets
@@ -128,8 +139,8 @@ install -d $RPM_BUILD_ROOT%{_libdir}/qt5/plugins/plasma/applets
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files -f libplasma5.lang
 %defattr(644,root,root,755)
