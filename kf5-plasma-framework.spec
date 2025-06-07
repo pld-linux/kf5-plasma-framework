@@ -3,7 +3,8 @@
 %bcond_with	tests		# test suite
 
 %define		kdeframever	5.116
-%define		qtver		5.15.2
+%define		kf_ver		%{version}
+%define		qt_ver		5.15.2
 %define		kfname		plasma-framework
 
 Summary:	The foundations that can be used to build a primary user interface
@@ -18,65 +19,86 @@ Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{v
 URL:		https://kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
-BuildRequires:	Qt5Core-devel >= %{qtver}
-BuildRequires:	Qt5DBus-devel >= %{qtver}
-BuildRequires:	Qt5Gui-devel >= %{qtver}
-BuildRequires:	Qt5Network-devel >= %{qtver}
-BuildRequires:	Qt5Qml-devel >= %{qtver}
-BuildRequires:	Qt5Quick-controls2-devel >= %{qtver}
-BuildRequires:	Qt5Quick-devel >= %{qtver}
-BuildRequires:	Qt5Script-devel >= %{qtver}
-BuildRequires:	Qt5Sql-devel >= %{qtver}
-BuildRequires:	Qt5Svg-devel >= %{qtver}
-BuildRequires:	Qt5Test-devel >= %{qtver}
-BuildRequires:	Qt5Widgets-devel >= %{qtver}
-BuildRequires:	Qt5X11Extras-devel >= %{qtver}
-BuildRequires:	Qt5Xml-devel >= %{qtver}
+BuildRequires:	Qt5Core-devel >= %{qt_ver}
+BuildRequires:	Qt5DBus-devel >= %{qt_ver}
+BuildRequires:	Qt5Gui-devel >= %{qt_ver}
+BuildRequires:	Qt5Qml-devel >= %{qt_ver}
+BuildRequires:	Qt5Quick-controls2-devel >= %{qt_ver}
+BuildRequires:	Qt5Quick-devel >= %{qt_ver}
+BuildRequires:	Qt5Sql-devel >= %{qt_ver}
+BuildRequires:	Qt5Svg-devel >= %{qt_ver}
+%{?with_tests:BuildRequires:	Qt5Test-devel >= %{qt_ver}}
+BuildRequires:	Qt5Widgets-devel >= %{qt_ver}
+BuildRequires:	Qt5X11Extras-devel >= %{qt_ver}
 BuildRequires:	cmake >= 3.16
-BuildRequires:	gettext-devel
-BuildRequires:	kf5-attica-devel >= %{version}
-BuildRequires:	kf5-extra-cmake-modules >= %{version}
-BuildRequires:	kf5-kactivities-devel >= %{version}
-BuildRequires:	kf5-karchive-devel >= %{version}
-BuildRequires:	kf5-kauth-devel >= %{version}
-BuildRequires:	kf5-kbookmarks-devel >= %{version}
-BuildRequires:	kf5-kcodecs-devel >= %{version}
-BuildRequires:	kf5-kcompletion-devel >= %{version}
-BuildRequires:	kf5-kconfig-devel >= %{version}
-BuildRequires:	kf5-kconfigwidgets-devel >= %{version}
-BuildRequires:	kf5-kcoreaddons-devel
-BuildRequires:	kf5-kdbusaddons-devel >= %{version}
-BuildRequires:	kf5-kdeclarative-devel >= %{version}
-BuildRequires:	kf5-kdoctools-devel >= %{version}
-BuildRequires:	kf5-kglobalaccel-devel >= %{version}
-BuildRequires:	kf5-kguiaddons-devel >= %{version}
-BuildRequires:	kf5-ki18n-devel >= %{version}
-BuildRequires:	kf5-kiconthemes-devel >= %{version}
-BuildRequires:	kf5-kio-devel >= %{version}
-BuildRequires:	kf5-kirigami2-devel >= %{version}
-BuildRequires:	kf5-kitemviews-devel >= %{version}
-BuildRequires:	kf5-kjobwidgets-devel >= %{version}
-BuildRequires:	kf5-knotifications-devel
-BuildRequires:	kf5-kpackage-devel >= %{version}
-BuildRequires:	kf5-kservice-devel >= %{version}
-BuildRequires:	kf5-ktextwidgets-devel >= %{version}
-BuildRequires:	kf5-kwayland-devel >= %{version}
-BuildRequires:	kf5-kwidgetsaddons-devel >= %{version}
-BuildRequires:	kf5-kwindowsystem-devel >= %{version}
-BuildRequires:	kf5-kxmlgui-devel >= %{version}
-BuildRequires:	kf5-solid-devel >= %{version}
-BuildRequires:	kf5-sonnet-devel >= %{version}
+BuildRequires:	gettext-tools
+BuildRequires:	kf5-extra-cmake-modules >= %{kf_ver}
+BuildRequires:	kf5-kactivities-devel >= %{kf_ver}
+BuildRequires:	kf5-karchive-devel >= %{kf_ver}
+%{?with_tests:BuildRequires:	kf5-kcompletion-devel >= %{kf_ver}}
+BuildRequires:	kf5-kconfig-devel >= %{kf_ver}
+BuildRequires:	kf5-kconfigwidgets-devel >= %{kf_ver}
+BuildRequires:	kf5-kcoreaddons-devel >= %{kf_ver}
+BuildRequires:	kf5-kdbusaddons-devel >= %{kf_ver}
+BuildRequires:	kf5-kdeclarative-devel >= %{kf_ver}
+BuildRequires:	kf5-kdoctools-devel >= %{kf_ver}
+BuildRequires:	kf5-kglobalaccel-devel >= %{kf_ver}
+BuildRequires:	kf5-kguiaddons-devel >= %{kf_ver}
+BuildRequires:	kf5-ki18n-devel >= %{kf_ver}
+BuildRequires:	kf5-kiconthemes-devel >= %{kf_ver}
+BuildRequires:	kf5-kio-devel >= %{kf_ver}
+BuildRequires:	kf5-kirigami2-devel >= %{kf_ver}
+%{?with_tests:BuildRequires:	kf5-kitemviews-devel >= %{kf_ver}}
+%{?with_tests:BuildRequires:	kf5-kjobwidgets-devel >= %{kf_ver}}
+BuildRequires:	kf5-knotifications-devel >= %{kf_ver}
+BuildRequires:	kf5-kpackage-devel >= %{kf_ver}
+BuildRequires:	kf5-kservice-devel >= %{kf_ver}
+%{?with_tests:BuildRequires:	kf5-ktextwidgets-devel >= %{kf_ver}}
+BuildRequires:	kf5-kwayland-devel >= %{kf_ver}
+BuildRequires:	kf5-kwidgetsaddons-devel >= %{kf_ver}
+BuildRequires:	kf5-kwindowsystem-devel >= %{kf_ver}
+BuildRequires:	kf5-kxmlgui-devel >= %{kf_ver}
+%{?with_tests:BuildRequires:	kf5-sonnet-devel >= %{kf_ver}}
 BuildRequires:	libxcb-devel
 BuildRequires:	ninja
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.164
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xz
+Requires:	Qt5Core >= %{qt_ver}
+Requires:	Qt5DBus >= %{qt_ver}
+Requires:	Qt5Gui >= %{qt_ver}
+Requires:	Qt5Qml >= %{qt_ver}
+Requires:	Qt5Quick-controls2 >= %{qt_ver}
+Requires:	Qt5Quick >= %{qt_ver}
+Requires:	Qt5Sql >= %{qt_ver}
+Requires:	Qt5Svg >= %{qt_ver}
+Requires:	Qt5Widgets >= %{qt_ver}
+Requires:	Qt5X11Extras >= %{qt_ver}
 Requires:	kf5-dirs
+Requires:	kf5-kactivities >= %{kf_ver}
+Requires:	kf5-karchive >= %{kf_ver}
+Requires:	kf5-kconfig >= %{kf_ver}
+Requires:	kf5-kconfigwidgets >= %{kf_ver}
+Requires:	kf5-kcoreaddons >= %{kf_ver}
+Requires:	kf5-kdbusaddons >= %{kf_ver}
+Requires:	kf5-kdeclarative >= %{kf_ver}
+Requires:	kf5-kdoctools >= %{kf_ver}
+Requires:	kf5-kglobalaccel >= %{kf_ver}
+Requires:	kf5-kguiaddons >= %{kf_ver}
+Requires:	kf5-ki18n >= %{kf_ver}
+Requires:	kf5-kiconthemes >= %{kf_ver}
+Requires:	kf5-kio >= %{kf_ver}
+Requires:	kf5-kirigami2 >= %{kf_ver}
+Requires:	kf5-knotifications >= %{kf_ver}
+Requires:	kf5-kpackage >= %{kf_ver}
+Requires:	kf5-kservice >= %{kf_ver}
+Requires:	kf5-kwayland >= %{kf_ver}
+Requires:	kf5-kwidgetsaddons >= %{kf_ver}
+Requires:	kf5-kwindowsystem >= %{kf_ver}
+Requires:	kf5-kxmlgui >= %{kf_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		qt5dir		%{_libdir}/qt5
 
 %description
 The Plasma framework provides the foundations that can be used to
@@ -102,9 +124,15 @@ Summary:	Header files for %{kfname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kfname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	kf5-kpackage-devel >= %{version}
-Requires:	kf5-kservice-devel >= %{version}
-Requires:	kf5-kwindowsystem-devel >= %{version}
+Requires:	Qt5Gui-devel >= %{qt_ver}
+Requires:	Qt5Qml-devel >= %{qt_ver}
+Requires:	Qt5Quick-devel >= %{qt_ver}
+Requires:	kf5-extra-cmake-modules >= %{kf_ver}
+Requires:	kf5-kconfig-devel >= %{kf_ver}
+Requires:	kf5-kcoreaddons-devel >= %{kf_ver}
+Requires:	kf5-kpackage-devel >= %{kf_ver}
+Requires:	kf5-kservice-devel >= %{kf_ver}
+Requires:	kf5-kwindowsystem-devel >= %{kf_ver}
 
 %description devel
 Header files for %{kfname} development.
