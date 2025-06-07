@@ -252,16 +252,17 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/qlogging-categories5/plasma-framework.categories
 %{_datadir}/qlogging-categories5/plasma-framework.renamecategories
 %{_mandir}/man1/plasmapkg2.1*
-%{_mandir}/ca/man1/plasmapkg2.1*
-%{_mandir}/de/man1/plasmapkg2.1*
-%{_mandir}/es/man1/plasmapkg2.1*
-%{_mandir}/fr/man1/plasmapkg2.1*
-%{_mandir}/it/man1/plasmapkg2.1*
-%{_mandir}/nl/man1/plasmapkg2.1*
-%{_mandir}/pt/man1/plasmapkg2.1*
-%{_mandir}/pt_BR/man1/plasmapkg2.1*
-%{_mandir}/sv/man1/plasmapkg2.1*
-%{_mandir}/uk/man1/plasmapkg2.1*
+%lang(ca) %{_mandir}/ca/man1/plasmapkg2.1*
+%lang(ca) %{_mandir}/ca@valencia/man1/plasmapkg2.1*
+%lang(de) %{_mandir}/de/man1/plasmapkg2.1*
+%lang(es) %{_mandir}/es/man1/plasmapkg2.1*
+%lang(fr) %{_mandir}/fr/man1/plasmapkg2.1*
+%lang(it) %{_mandir}/it/man1/plasmapkg2.1*
+%lang(nl) %{_mandir}/nl/man1/plasmapkg2.1*
+%lang(pt) %{_mandir}/pt/man1/plasmapkg2.1*
+%lang(pt_BR) %{_mandir}/pt_BR/man1/plasmapkg2.1*
+%lang(sv) %{_mandir}/sv/man1/plasmapkg2.1*
+%lang(uk) %{_mandir}/uk/man1/plasmapkg2.1*
 
 # themes
 %dir %{_datadir}/plasma/desktoptheme
