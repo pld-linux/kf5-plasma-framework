@@ -11,7 +11,7 @@ Summary:	The foundations that can be used to build a primary user interface
 Summary(pl.UTF-8):	Podstawowe konstrukcje do zbudowania głównego interfejsu użytkownika
 Name:		kf5-%{kfname}
 Version:	5.116.0
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/frameworks/%{kdeframever}/%{kfname}-%{version}.tar.xz
@@ -98,6 +98,11 @@ Requires:	kf5-kwayland >= %{kf_ver}
 Requires:	kf5-kwidgetsaddons >= %{kf_ver}
 Requires:	kf5-kwindowsystem >= %{kf_ver}
 Requires:	kf5-kxmlgui >= %{kf_ver}
+# >= to allow also kf6-libplasma-data
+Requires:	kf5-plasma-desktoptheme-breeze >= %{version}-%{release}
+Suggests:	kf5-plasma-desktoptheme-air = %{version}-%{release}
+# >= to allow also kp6-oxygen
+Suggests:	kf5-plasma-desktoptheme-oxygen >= %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -139,6 +144,44 @@ Header files for %{kfname} development.
 
 %description devel -l pl.UTF-8
 Pliki nagłówkowe dla programistów używających %{kfname}.
+
+%package -n kf5-plasma-desktoptheme-air
+Summary:	Air desktop theme for Plasma
+Summary(pl.UTF-8):	Motyw pulpitu Air dla Plasmy
+Group:		Themes
+Requires:	%{name} = %{version}-%{release}
+
+%description -n kf5-plasma-desktoptheme-air
+Air desktop theme for Plasma.
+
+%description -n kf5-plasma-desktoptheme-air -l pl.UTF-8
+Motyw pulpitu Air dla Plasmy.
+
+%package -n kf5-plasma-desktoptheme-breeze
+Summary:	Breeze desktop themes for Plasma
+Summary(pl.UTF-8):	Motywy pulpitu Breeze dla Plasmy
+Group:		Themes
+Requires:	%{name} = %{version}-%{release}
+Conflicts:	kp6-libplasma-data
+
+%description -n kf5-plasma-desktoptheme-breeze
+Breeze (default, dark and light) desktop themes for Plasma.
+
+%description -n kf5-plasma-desktoptheme-breeze -l pl.UTF-8
+Motywy pulpitu Breeze dla Plasmy (domyślny, ciemny i jasny).
+
+%package -n kf5-plasma-desktoptheme-oxygen
+Summary:	Oxygen desktop theme for Plasma
+Summary(pl.UTF-8):	Motyw pulpitu Oxygen dla Plasmy
+Group:		Themes
+Requires:	%{name} = %{version}-%{release}
+Conflicts:	kp6-oxygen
+
+%description -n kf5-plasma-desktoptheme-oxygen
+Oxygen desktop theme for Plasma.
+
+%description -n kf5-plasma-desktoptheme-oxygen -l pl.UTF-8
+Motyw pulpitu Oxygen dla Plasmy.
 
 %prep
 %setup -q -n %{kfname}-%{version}
@@ -264,14 +307,6 @@ rm -rf $RPM_BUILD_ROOT
 %lang(sv) %{_mandir}/sv/man1/plasmapkg2.1*
 %lang(uk) %{_mandir}/uk/man1/plasmapkg2.1*
 
-# themes
-%dir %{_datadir}/plasma/desktoptheme
-%{_datadir}/plasma/desktoptheme/air
-%{_datadir}/plasma/desktoptheme/breeze-dark
-%{_datadir}/plasma/desktoptheme/breeze-light
-%{_datadir}/plasma/desktoptheme/default
-%{_datadir}/plasma/desktoptheme/oxygen
-
 %files devel
 %defattr(644,root,root,755)
 %{_libdir}/libKF5Plasma.so
@@ -287,3 +322,18 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kdevappwizard/templates/plasma-wallpaper-with-qml-extension.tar.bz2
 %{_datadir}/kdevappwizard/templates/qml-plasmoid-with-qml-extension.tar.bz2
 %{_datadir}/kdevappwizard/templates/qml-plasmoid.tar.bz2
+
+%files -n kf5-plasma-desktoptheme-air
+%defattr(644,root,root,755)
+%{_datadir}/plasma/desktoptheme/air
+
+%files -n kf5-plasma-desktoptheme-breeze
+%defattr(644,root,root,755)
+%dir %{_datadir}/plasma/desktoptheme
+%{_datadir}/plasma/desktoptheme/breeze-dark
+%{_datadir}/plasma/desktoptheme/breeze-light
+%{_datadir}/plasma/desktoptheme/default
+
+%files -n kf5-plasma-desktoptheme-oxygen
+%defattr(644,root,root,755)
+%{_datadir}/plasma/desktoptheme/oxygen
